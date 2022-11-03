@@ -23,31 +23,16 @@ function ejercicioUno(numero) {
   }
 }
 
-ejercicioUno(numero);
-
 //Escriba un programa que solicite al usuario un número e imprima la suma de todos 
 //los números desde 1 hasta ese número.
 
-// function ejercicioDos(numero) {
-//   let suma = 0;
-//   for (i=1;i < numero; i++) {
-//       suma = numero + i;
-//   }
-//   return suma;
-// }
-// console.log (ejercicioDos(numero));
-
-
-
-
-
-
-
-
-
-
-
-
+function ejercicioDos(numero) {
+  let suma = 0;
+  for (i=1;i < numero; i++) {
+      suma = numero + i;
+  }
+  return suma;
+}
 
 // Escribe un programa que reciba un string y retorne el mismo string invertido. Utilice
 // un while para resolver este ejercicio. hola → aloh
@@ -59,39 +44,18 @@ function ejercicioTres (palabra) {
   }
   return espacio;
 }
-console.log (ejercicioTres (palabra))
-
-
-
-
-
-
-
-
-
 
 //Escriba un programa que reciba una frase y este debe de intercambiar las vocales
 //por la ‘i’. Ej, “esta es la entrada” → “isti is li intridi”.
 
-// function ejercicioCuatro (frase) {
-//   let espacio = "";
-//   for (let i = palabra.length; i >= 0; i++) {
-//     espacio += palabra[i];
-//   }
-//   return espacio;
-// }
-
-
-// function ejercicioCuatro (frase) {
-//   let espacio = "";
-//   for (let i = 0; i < frase.length; i++) {
-//     if (i === 'a' || 'e'|| 'i'|| 'o'|| 'u')
-//     espacio += palabra[i].replace('i');
-//   }
-//   return espacio;
-// }
-// console.log (ejercicioCuatro());
-
+  function ejercicioCuatro (frase) {
+    let espacio = "";
+    for (let frase = 0; frase[i] < frase[i].length; i++) {
+      if (frase [i] === 'a' || frase[i] === 'e'||frase[i] === 'i'||frase [i] === 'o'||frase [i] === 'u')
+      espacio += palabra.replace('i');
+    }
+    return espacio;
+  }
 
 
 //Escriba un programa que reciba una palabra y reordene sus letras en orden
@@ -112,3 +76,11 @@ function EjercicioCinco(){
   return letras;
 }
 console.log(EjercicioCinco());
+
+function main {
+  ejercicioUno(numero);
+  console.log (ejercicioDos(numero));
+  console.log (ejercicioTres (palabra))
+  console.log (ejercicioCuatro());
+  console.log(EjercicioCinco());
+}
