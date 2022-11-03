@@ -77,10 +77,11 @@ function EjercicioCinco(){
 }
 console.log(EjercicioCinco());
 
-function main {
+function main () {
   ejercicioUno(numero);
   console.log (ejercicioDos(numero));
   console.log (ejercicioTres (palabra))
   console.log (ejercicioCuatro());
   console.log(EjercicioCinco());
 }
+main ();
