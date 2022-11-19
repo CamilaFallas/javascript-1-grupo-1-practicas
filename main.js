@@ -1,99 +1,50 @@
-/*
-VARIABLES 
-*/
+// VARIABLES 
 
-var arr = [0,1,2,3,4,5];
-let numeros = [1,1,2,3,4,5,5,6,7];
-let repetidos = [];
-let ceros = [];
-let longitud = 10;
-let linea = " * "
-let matriz = [1,0,0] [0,1,1] [0,1,0];
 
-/* 1
-Cree un programa que reciba como parámetro un array de números, y
-verifique la lista de manera que retorne el número mayor.*/
+// Escriba un programa que calcule el factorial de un número de manera recursiva
 
-function highestNumber() { 
-    return Math.max(...arr);
+function factorial (num) {
+  if (num < 0) 
+        return 0;
+  else if (num === 0) 
+      return 1;
+  else {
+    return (num * factorial(num - 1));
+  }
 }
 
-/* 2
-Cree un programa que reciba como parámetro una palabra y verifique si
-dicha palabra es palíndromo, es decir, la palabra se lee igual de izquierda a
-derecha o de derecha a izquierda, o no. Para la resolución de dicho problema
-debe utilizar ciclo for . */
+// Escriba un programa que solicite al usuario un año y le indique si es bisiesto o no.
 
-function invertir(palindromo) {
-    let espacio = "";
-    for (let i = palindromo.length - 1; i >= 0; i--) {
-        espacio += palindromo[i];
-    }
-    return espacio;
+function bisiesto (anio) {
+  if ((anio %4 == 0 && anio%100 != 0) || (anio %400 == 0)) {
+        console.log ('El año ' + anio + ' es bisiesto')
+  } else {
+    console.log ('El año ' + anio + ' no es bisiesto') 
+  }
 }
 
-/* 3
-Dada la siguiente matriz [ [1,0,0], [0,1,1], [0,1,0] ], haga un programa que
-cuente e imprima la cantidad de ceros totales en dicha matriz. Debe utilizar
-ciclos for */
+// Escriba un programa que le solicite al usuario adivinar un número “secreto” del 1 al
+// 100. El programa debe continuar preguntando por nuevos números al usuario hasta
+// que lo adivine o ingrese un cero para salir. El programa debe indicar, cada vez que el
+// usuario falle, si el número ingresado es mayor o menor que el número a adivinar.
 
-function cerosMatriz (){
-    for (let i = 0; i < matriz; i++) {
-        if (matriz[i + 1] === matriz[i]) {
-          ceros.push(matriz[i]);
-        }
-      }
-       
-      console.log(ceros);
+function adivinar () {
+  let min = 1;
+  let max = 100;
+  let ingreso = Number(prompt ('Ingrese un numero del ' + min + ' al ' + max + ' para divinar el numero secreto')); 
+  if (ingreso === 50){
+    alert (" Ha elegido el numero correcto")
+  } else if (ingreso < 50) {
+    alert ('El numero secreto es mas alto')
+  } else if (ingreso > 50) {
+    alert ('El numero secreto es mas bajo')
+  } else {
+    alert ('El numero secreto es mas alto')
+  }    
 }
 
-/* 4
-Cree un programa que reciba un array de números, verifique cuáles números
-están repetidos y retorne un array con dichos números (los que estan
-duplicados), si no hay números repetidos en el array debe retornar el
-siguiente mensaje: “No se encontraron números repetidos en la lista de
-números recibida”. Debe usar un ciclo for. */
-
-function numerosRepetidos (datos){
-    for (let i=0; i < arr.length; ++i) {
-        let dato = datos [i];
-        if (!repetidos.find(d => d == dato) && datos.slice (i + 1).find(d => d == dato)) {
-                repetidos.push(dato);
-        }
-    }
-    return repetidos;
+function main {
+  console.log(factorial (5));
+  bisiesto(1900);
+  adivinar();
 }
-
-/*5
-Haga un programa que reciba un parámetro numérico x, el cual debe ser
-mayor o igual a 5, y que imprima un patrón, que simule un triángulo de
-asteriscos, como el siguiente. Debe utilizar ciclos for para la solución del
-problema.
-*/
-
-function triangulo (){
-    if (longitud < 5) {
-        alert ('Numero debe ser mayor a 5')
-    } 
-    else {
-        for (let i = 0; i < longitud; i++) {
-            let linea = "";
-             for ( let j = 0; j<= i; j++) {
-                linea += " * "
-            }
-             console.log(linea);
-         }
-    }
- }
- 
-function main() {
-    console.log ("El numero mayor del array es: " + highestNumber());
-    console.log("La frase: Lavan esa base naval, si es un polidromo -> " + invertir("Lavan esa base naval"));
-    console.log("Cantidad de ceros dentro de la matriz: " + cerosMatriz(matriz));
-    console.log("Los numeros repetidos dentro del array son: " + numerosRepetidos(numeros));
-    triangulo();
-}
-
-main();
-
-
