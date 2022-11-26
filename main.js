@@ -1,99 +1,45 @@
-/*
-VARIABLES 
-*/
+//VARIABLES
+array = [];
 
-var arr = [0,1,2,3,4,5];
-let numeros = [1,1,2,3,4,5,5,6,7];
-let repetidos = [];
-let ceros = [];
-let longitud = 10;
-let linea = " * "
-let matriz = [1,0,0] [0,1,1] [0,1,0];
+// Ejercicio 3:
+// Escriba un programa que imprima todos los números del 1 al 100, uno por línea.
 
-/* 1
-Cree un programa que reciba como parámetro un array de números, y
-verifique la lista de manera que retorne el número mayor.*/
-
-function highestNumber() { 
-    return Math.max(...arr);
-}
-
-/* 2
-Cree un programa que reciba como parámetro una palabra y verifique si
-dicha palabra es palíndromo, es decir, la palabra se lee igual de izquierda a
-derecha o de derecha a izquierda, o no. Para la resolución de dicho problema
-debe utilizar ciclo for . */
-
-function invertir(palindromo) {
-    let espacio = "";
-    for (let i = palindromo.length - 1; i >= 0; i--) {
-        espacio += palindromo[i];
+function ejercicio3 () {
+    for (i = 1; i <= 100; i++) {
+      console.log(i);
     }
-    return espacio;
 }
 
-/* 3
-Dada la siguiente matriz [ [1,0,0], [0,1,1], [0,1,0] ], haga un programa que
-cuente e imprima la cantidad de ceros totales en dicha matriz. Debe utilizar
-ciclos for */
+// Ejercicio 4:
+// Modifique el programa anterior para que sólo imprima los números pares.
 
-function cerosMatriz (){
-    for (let i = 0; i < matriz; i++) {
-        if (matriz[i + 1] === matriz[i]) {
-          ceros.push(matriz[i]);
-        }
+  function ejercicio4 () {
+    for (i = 1; i <= 100; i++) {
+     if (i % 2 === 0) {
+      console.log(i);
       }
-       
-      console.log(ceros);
+    }
+  } 
+
+// Ejercicio 5:
+// Modifique el programa del ejercicio 4 para que imprima 10 números por línea, separados por un espacio. La primera línea tendrá los números del 1 al 10, la segunda del 11 al 20, la tercera del 21 al 30 y así hasta llegar a 100.
+
+function ejercicio5() {
+  for(i = 1; i <= 100; i++) {
+    
+    if(i % 10 === 0) {
+      array.push("<br/>");
+  } else { 
+      array.push(i);
+    }
+  }
+  return(array);
 }
 
-/* 4
-Cree un programa que reciba un array de números, verifique cuáles números
-están repetidos y retorne un array con dichos números (los que estan
-duplicados), si no hay números repetidos en el array debe retornar el
-siguiente mensaje: “No se encontraron números repetidos en la lista de
-números recibida”. Debe usar un ciclo for. */
-
-function numerosRepetidos (datos){
-    for (let i=0; i < arr.length; ++i) {
-        let dato = datos [i];
-        if (!repetidos.find(d => d == dato) && datos.slice (i + 1).find(d => d == dato)) {
-                repetidos.push(dato);
-        }
-    }
-    return repetidos;
-}
-
-/*5
-Haga un programa que reciba un parámetro numérico x, el cual debe ser
-mayor o igual a 5, y que imprima un patrón, que simule un triángulo de
-asteriscos, como el siguiente. Debe utilizar ciclos for para la solución del
-problema.
-*/
-
-function triangulo (){
-    if (longitud < 5) {
-        alert ('Numero debe ser mayor a 5')
-    } 
-    else {
-        for (let i = 0; i < longitud; i++) {
-            let linea = "";
-             for ( let j = 0; j<= i; j++) {
-                linea += " * "
-            }
-             console.log(linea);
-         }
-    }
- }
- 
-function main() {
-    console.log ("El numero mayor del array es: " + highestNumber());
-    console.log("La frase: Lavan esa base naval, si es un polidromo -> " + invertir("Lavan esa base naval"));
-    console.log("Cantidad de ceros dentro de la matriz: " + cerosMatriz(matriz));
-    console.log("Los numeros repetidos dentro del array son: " + numerosRepetidos(numeros));
-    triangulo();
+function main () {
+  ejercicio3 ();
+  ejercicio4 ();
+  console.log(ejercicio5 ());
 }
 
 main();
-
-
