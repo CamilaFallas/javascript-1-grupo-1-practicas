@@ -3,6 +3,22 @@
 let base = 5;
 let exponente = 5;
 
+function ejercicioUno () {
+    for (let i = 0; i < 10; i++) {
+        let linea = '';
+        for (let j = 0; j < (10-i);  j++) {
+        linea +='*';  
+        }
+       for ( let j =0; j<= i; j++) {
+        linea += '#'; 
+    }
+    
+    console.log (linea)
+  }
+}
+
+
+
 function ejercicioDos () {
     let resultado = 1;
     for(let i = exponente; i > 0; i--){
@@ -28,7 +44,7 @@ function ejercicioCuatro(array) {
    }
 
    function main(){
-    // console.log (ejercicioUno ());
+    console.log (ejercicioUno ());
     console.log(ejercicioDos());
     console.log(ejercicioTres());
     console.log(ejercicioCuatro([1,2,3,4,5]));
