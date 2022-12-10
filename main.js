@@ -1,45 +1,45 @@
-//VARIABLES
-array = [];
+//Variables 
 
-// Ejercicio 3:
-// Escriba un programa que imprima todos los números del 1 al 100, uno por línea.
+let array1 = [1,2,3, 4];
+let array2 = [1,2,3, 5];
 
-function ejercicio3 () {
-    for (i = 1; i <= 100; i++) {
-      console.log(i);
-    }
+// Ejercicio 1:
+// Escriba un programa que reciba y genere una matriz del tamaño de la entrada y que contenga una X representada por medio de ‘x’.
+
+function equis(n) {
+  for (let i = 0; i < n; i++) {
+    let arr = new Array(n)
+    let recorre = arr.fill(" ", 0, arr.length)
+    recorre.splice(arr.length - (i + 1), 1, "x")
+    recorre.splice(i, 1, "x")
+    console.log(recorre.join(""))
+}
 }
 
-// Ejercicio 4:
-// Modifique el programa anterior para que sólo imprima los números pares.
+equis(8);
 
-  function ejercicio4 () {
-    for (i = 1; i <= 100; i++) {
-     if (i % 2 === 0) {
-      console.log(i);
+// Ejercicio 2:
+// Escriba un programa que reciba dos arreglos con elementos y verifique si ambos
+// arreglos contienen los mismos elementos. Si ambos arreglos contienen lo mismo
+// imprima: ‘Los arreglos son iguales’ o si no, imprima los elementos diferentes entre
+// los dos arreglos.
+
+  function arrays(a, b){
+    a.sort();
+    b.sort();
+    let repetidos = [];
+
+    for (i = 0; i < a.length; i++) {
+      if (a[i] !== b[i]) {
+        repetidos.push(a[i], b[i]);
       }
     }
-  } 
 
-// Ejercicio 5:
-// Modifique el programa del ejercicio 4 para que imprima 10 números por línea, separados por un espacio. La primera línea tendrá los números del 1 al 10, la segunda del 11 al 20, la tercera del 21 al 30 y así hasta llegar a 100.
-
-function ejercicio5() {
-  for(i = 1; i <= 100; i++) {
-    
-    if(i % 10 === 0) {
-      array.push("<br/>");
-  } else { 
-      array.push(i);
-    }
+    if (repetidos.length < 1) {
+      console.log("Los arreglos son iguales");
+    } else { console.log("Son diferentes: ", repetidos)}
   }
-  return(array);
-}
+  
+ 
+  arrays(array1, array2);
 
-function main () {
-  ejercicio3 ();
-  ejercicio4 ();
-  console.log(ejercicio5 ());
-}
-
-main();
